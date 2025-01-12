@@ -969,14 +969,14 @@ global.db.data.chats[m.chat] = {}
 if (chat) {
 if (!('isBanned' in chat)) chat.isBanned = false         
 if (!('welcome' in chat)) chat.welcome = true           
-if (!('detect' in chat)) chat.detect = false               
+if (!('detect' in chat)) chat.detect = true              
 if (!('sWelcome' in chat)) chat.sWelcome = ''          
 if (!('sBye' in chat)) chat.sBye = ''                    
 if (!('sPromote' in chat)) chat.sPromote = ''             
 if (!('sDemote' in chat)) chat.sDemote = '' 
 if (!('sCondition' in chat)) chat.sCondition = JSON.stringify([{ grupo: { usuario: [], condicion: [], admin: '' }, prefijos: []}])
-if (!('delete' in chat)) chat.delete = false                   
-if (!('modohorny' in chat)) chat.modohorny = true       
+if (!('delete' in chat)) chat.delete = true                  
+if (!('modohorny' in chat)) chat.modohorny = false      
 if (!('stickers' in chat)) chat.stickers = false            
 if (!('autosticker' in chat)) chat.autosticker = false      
 if (!('audios' in chat)) chat.audios = false            
@@ -994,7 +994,7 @@ if (!('antiDiscord' in chat)) chat.antiDiscord = false
 if (!('antiThreads' in chat)) chat.antiThreads = false
 if (!('antiTwitch' in chat)) chat.antiTwitch = false
 if (!('antifake' in chat)) chat.antifake = false
-if (!('reaction' in chat)) chat.reaction = false   
+if (!('reaction' in chat)) chat.reaction = false  
 if (!('viewonce' in chat)) chat.viewonce = true      
 if (!('modoadmin' in chat)) chat.modoadmin = false    
 if (!('antitoxic' in chat)) chat.antitoxic = false
@@ -1014,8 +1014,8 @@ sBye: '',
 sPromote: '',
 sDemote: '', 
 sCondition: JSON.stringify([{ grupo: { usuario: [], condicion: [], admin: '' }, prefijos: []}]), 
-delete: false,
-modohorny: true,
+delete: true,
+modohorny: false,
 stickers: false,
 autosticker: false,
 audios: false,
@@ -1033,7 +1033,7 @@ antiDiscord: false,
 antiThreads: false,
 antiTwitch: false,
 antifake: false,
-reaction: true,
+reaction: false,
 viewonce: false,
 modoadmin: false,
 antitoxic: false,
@@ -1523,10 +1523,10 @@ let chat = global.db.data.chats[msg?.chat] || {}
 if (!chat?.delete) return 
 if (!msg) return 
 if (!msg?.isGroup) return 
-const antideleteMessage = `*╭━━⬣ ${lenguajeGB['smsCont19']()} ⬣━━ 𓃠*
-${lenguajeGB['smsCont20']()} @${participant.split`@`[0]}
-${lenguajeGB['smsCont21']()}
-*╰━━━⬣ ${lenguajeGB['smsCont19']()} ⬣━━╯*`.trim();
+const antideleteMessage = `*╭━━⬣ 🤚🏻¡ALTO NO ELIMINES MSJS! ⬣━━*
+No esta permitido eliminar mensajes en este grupo.
+A continuación enviare el mensaje que eliminaste ...
+*╰━━━⬣  ⬣━━╯*`.trim();
 await this.sendMessage(msg.chat, {text: antideleteMessage, mentions: [participant]}, {quoted: msg})
 this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
 } catch (e) {
