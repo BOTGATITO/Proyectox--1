@@ -358,9 +358,9 @@ let menu = `╔═════════════════╗
 
  `.trim()
     
-const img = ['https://qu.ax/ARUqc.jpg',
-'https://qu.ax/ARUqc.jpg',
-'https://qu.ax/ARUqc.jpg']
+const img = ['https://f.uguu.se/eTXbRmAQ.jpg',
+'https://f.uguu.se/eTXbRmAQ.jpg',
+'https://f.uguu.se/eTXbRmAQ.jpg']
 
 try {
 await conn.sendMessage(m.chat, { image: { url: img.getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak }) 
